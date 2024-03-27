@@ -1,11 +1,11 @@
 local M = {
 	{
-    	"williamboman/mason.nvim",
-    	config = function()
-    		require("mason").setup()
-    	end
-    },
-    {
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end,
+	},
+	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
@@ -14,19 +14,21 @@ local M = {
 					"clangd",
 					"eslint",
 					"rust_analyzer",
-				}
+				},
 			})
-		end
-    },
-    {
-    	"neovim/nvim-lspconfig",
-    	config = function()
-    		local lspconfig = require("lspconfig")
-    		lspconfig.lua_ls.setup({})
-			lspconfig.clangd.setup({})
-			lspconfig.eslint.setup({})
-			lspconfig.rust_analyzer.setup({})
-  		end
-    },
+		end,
+	},
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			local lspconfig = require("lspconfig")
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+			lspconfig.lua_ls.setup({ capabilities = capabilities })
+			lspconfig.clangd.setup({ capabilities = capabilities })
+			lspconfig.eslint.setup({ capabilities = capabilities })
+			lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+		end,
+	},
 }
 return M
