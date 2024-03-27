@@ -1,4 +1,30 @@
 -- Keymaps go here
+-- General Remaps
+--
+-- Move lines up and down
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
+
+-- Keep cursor in the same position when moving up and down
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Keep searchterms in the middle of the screen
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+-- Yank selection into system clipboard
+vim.keymap.set("v", "<leader>y", '"+y', { noremap = true })
+
+-- Remove keybinds you don't want to fat finger
+vim.keymap.set("n", "<C-z>", "<nop>")
+vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "C-Z", "<nop>")
+
+-- Replace word under cursor
+vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/", { noremap = true })
+
+-- Addon Specific Remaps
 --
 -- Nvim-Tree keymaps
 -- Create function to smart toggle the tree
