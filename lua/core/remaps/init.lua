@@ -26,6 +26,10 @@ vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/", { noremap = true })
 
 -- Addon Specific Remaps
 --
+--
+-- neoclip keymaps
+vim.keymap.set("n", "<leader>ph", "<Cmd>Telescope neoclip<CR>")
+
 -- Nvim-Tree keymaps
 -- Create function to smart toggle the tree
 local nvimTreeFocusOrToggle = function()
@@ -102,3 +106,8 @@ vim.api.nvim_set_keymap(
 	':<C-u>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>',
 	{ noremap = true, silent = true }
 )
+
+-- nvim-leap keymaps
+vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward)")
+vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>(leap-backward)")
+vim.keymap.set({ "n", "x", "o" }, "gs", "<Plug>(leap-from-window)")
