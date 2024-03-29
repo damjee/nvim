@@ -27,8 +27,13 @@ local M = {
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.clangd.setup({ capabilities = capabilities })
 			lspconfig.eslint.setup({ capabilities = capabilities })
-			lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+			-- lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 		end,
+	},
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^4", -- Recommended
+		ft = { "rust" },
 	},
 }
 return M
