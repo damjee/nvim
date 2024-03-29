@@ -111,3 +111,6 @@ vim.api.nvim_set_keymap(
 vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward)")
 vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>(leap-backward)")
 vim.keymap.set({ "n", "x", "o" }, "gs", "<Plug>(leap-from-window)")
+
+-- nvim-auto-save keymaps
+vim.api.nvim_set_keymap("n", "<C-s>", ":ASToggle<CR>", {})
