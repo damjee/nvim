@@ -9,7 +9,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- Keep searchterms in the middle of the screen
+-- Keep search terms in the middle of the screen
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
@@ -24,10 +24,10 @@ vim.keymap.set("n", "C-Z", "<nop>")
 -- Replace word under cursor
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/", { noremap = true })
 
--- Addon Specific Remaps
+-- Add-on Specific Remaps
 --
 --
--- neoclip keymaps
+-- Neoclip keymaps
 vim.keymap.set("n", "<leader>ph", "<Cmd>Telescope neoclip<CR>")
 
 -- Nvim-Tree keymaps

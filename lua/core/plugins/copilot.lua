@@ -10,12 +10,12 @@ local M = {
 				auto_trigger = true,
 				debounce = 75,
 				keymap = {
-					accept = "<C-;>",
-					accept_word = "<C-l>",
-					accept_line = "<C-'>",
+					accept = "<C-f>",
+					accept_word = "<C-g>",
+					accept_line = "<C-d>",
 					next = "<C-n>",
 					prev = "<C-p>",
-					--	dismiss = "<C-|>",
+					dismiss = "<C-e>",
 				},
 			},
 		})
