@@ -12,7 +12,9 @@ local M = {
 		"nvim-tree/nvim-web-devicons",
 	},
 	opts = {
-		-- configuration goes here
+		arg = "leetcode.nvim",
+
+		lang = "golang",
 	},
 }
 

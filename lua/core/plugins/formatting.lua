@@ -12,6 +12,7 @@ local M = {
 				-- javascript = { { "prettierd", "prettier" } },
 				javascript = { "prettier" },
 				rust = { "rustfmt" },
+				go = { "gofmt", "goimports", "golines" },
 			},
 			format_after_save = {
 				lsp_fallback = true,

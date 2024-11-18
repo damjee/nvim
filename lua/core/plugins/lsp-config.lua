@@ -14,6 +14,7 @@ local M = {
 					"clangd",
 					"eslint",
 					"rust_analyzer",
+					"gopls",
 				},
 			})
 		end,
@@ -27,6 +28,7 @@ local M = {
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.clangd.setup({ capabilities = capabilities })
 			lspconfig.eslint.setup({ capabilities = capabilities })
+			lspconfig.gopls.setup({ capabilities = capabilities })
 			-- lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 		end,
 	},
