@@ -107,10 +107,16 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 
--- nvim-leap keymaps
-vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward)")
-vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>(leap-backward)")
-vim.keymap.set({ "n", "x", "o" }, "gs", "<Plug>(leap-from-window)")
-
 -- nvim-auto-save keymaps
-vim.api.nvim_set_keymap("n", "<leader>as", ":ASToggle<CR>", {})
+-- vim.api.nvim_set_keymap("n", "<leader>as", ":ASToggle<CR>", {})
+vim.keymap.set("n", "<leader>as", function()
+	require("autosave.action").toggle()
+	local on = vim.g.autosave_state
+	vim.notify("AutoSave " .. (on and "enabled" or "disabled"), vim.log.levels.INFO, { title = "AutoSave" })
+end, { desc = "AutoSave Toggle" })
+
+
+-- nvim-leap keymaps
+--vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward)")
+--vim.keymap.set({ "n", "x", "o" }, "S", "<Plug>(leap-backward)")
+--vim.keymap.set({ "n", "x", "o" }, "gs", "<Plug>(leap-from-window)")
