@@ -28,6 +28,7 @@ vim.opt.backup = false                                 -- Disable backup files
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- Set undo directory
 vim.opt.undofile = true                                -- Enable persistent undo
 
--- Windows specific undotree
--- Makes FC used instead of Diff
--- vim.g.undotree_DiffCommand = "FC"
+if vim.fn.has("win32") == 1 then
+	-- Undotree uses fc on Windows instead of the missing diff command.
+	vim.g.undotree_DiffCommand = "FC"
+end
