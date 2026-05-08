@@ -110,9 +110,10 @@ vim.api.nvim_set_keymap(
 -- nvim-auto-save keymaps
 -- vim.api.nvim_set_keymap("n", "<leader>as", ":ASToggle<CR>", {})
 vim.keymap.set("n", "<leader>as", function()
-	require("autosave.action").toggle()
-	local on = vim.g.autosave_state
-	vim.notify("AutoSave " .. (on and "enabled" or "disabled"), vim.log.levels.INFO, { title = "AutoSave" })
+	local autosave = require("auto-save")
+	local on = #vim.api.nvim_get_autocmds({ group = "AutoSave" }) > 0
+	autosave.toggle()
+	vim.notify("AutoSave " .. (on and "disabled" or "enabled"), vim.log.levels.INFO, { title = "AutoSave" })
 end, { desc = "AutoSave Toggle" })
 
 
