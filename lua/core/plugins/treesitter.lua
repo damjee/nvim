@@ -9,6 +9,7 @@ local M = {
 		configs.setup({
 			ensure_installed = {
 				"c", "cpp", "lua", "vim", "vimdoc", "query",
+				"markdown", "markdown_inline",
 				"javascript", "typescript", "json", "html",
 				"bash", "fish", "css", "csv", "dockerfile",
 				"gdscript", "gdshader", "godot_resource",
