@@ -22,14 +22,23 @@ local M = {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local servers = {
+				"lua_ls",
+				"clangd",
+				"eslint",
+				"gopls",
+			}
 
-			lspconfig.lua_ls.setup({ capabilities = capabilities })
-			lspconfig.clangd.setup({ capabilities = capabilities })
-			lspconfig.eslint.setup({ capabilities = capabilities })
-			lspconfig.gopls.setup({ capabilities = capabilities })
-			-- lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+			for _, server in ipairs(servers) do
+				vim.lsp.config(server, {
+					capabilities = capabilities,
+				})
+				vim.lsp.enable(server)
+			end
+
+			-- vim.lsp.config("rust_analyzer", { capabilities = capabilities })
+			-- vim.lsp.enable("rust_analyzer")
 		end,
 	},
 	{

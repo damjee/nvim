@@ -1,0 +1,46 @@
+local parsers = {
+	"c",
+	"cpp",
+	"lua",
+	"vim",
+	"vimdoc",
+	"query",
+	"markdown",
+	"markdown_inline",
+	"javascript",
+	"typescript",
+	"json",
+	"html",
+	"bash",
+	"fish",
+	"css",
+	"csv",
+	"dockerfile",
+	"gdscript",
+	"gdshader",
+	"godot_resource",
+	"go",
+	"gomod",
+	"gitignore",
+	"just",
+	"python",
+	"regex",
+	"rust",
+	"sql",
+	"tmux",
+	"toml",
+	"xml",
+	"yaml",
+}
+
+local M = {
+	"romus204/tree-sitter-manager.nvim",
+	cmd = { "TSManager", "TSInstall", "TSUninstall" },
+	opts = {
+		ensure_installed = parsers,
+		auto_install = true,
+		highlight = true,
+	},
+}
+
+return M
