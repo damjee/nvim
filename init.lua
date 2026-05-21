@@ -1,14 +1,4 @@
--- Disable netrw at the very start of your init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
--- Enable 24-bit colour
-vim.opt.termguicolors = true
-
-vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
--- vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
-
-local opts = {} -- lazy.nvim options
+vim.g.mapleader = " "
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -23,7 +13,5 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("core.plugins", opts)
---require("lazy").setup({}, opts)
+require("lazy").setup({})
 require("core.remaps")
-require("core.settings")
