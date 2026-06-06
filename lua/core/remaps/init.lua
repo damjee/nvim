@@ -5,6 +5,10 @@
 vim.keymap.set("v", "<C-S-Down>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<C-S-Up>", ":m '<-2<CR>gv=gv")
 
+-- New line without entering insert mode
+vim.keymap.set("n", "<leader>o", "m`o<Esc>``")
+vim.keymap.set("n", "<leader>O", "m`O<Esc>``")
+
 -- Keep cursor in the same position when moving up and down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
