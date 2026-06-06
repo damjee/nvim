@@ -2,8 +2,8 @@
 -- General Remaps
 --
 -- Move lines up and down
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
+vim.keymap.set("v", "<C-S-Down>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<C-S-Up>", ":m '<-2<CR>gv=gv")
 
 -- Keep cursor in the same position when moving up and down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -48,7 +48,7 @@ vim.keymap.set("n", "<C-n>", nvimTreeFocusOrToggle)
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>gf", builtin.git_files, {})
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>rg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 
 -- Harpoon keymaps
@@ -57,7 +57,7 @@ harpoon:setup({})
 vim.keymap.set("n", "<leader>a", function()
 	harpoon:list():add()
 end)
-vim.keymap.set("n", "<C-e>", function()
+vim.keymap.set("n", "<leader>e>", function()
 	harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
 vim.keymap.set("n", "<C-1>", function()
