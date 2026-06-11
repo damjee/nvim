@@ -32,3 +32,15 @@ if vim.fn.has("win32") == 1 then
 	-- Undotree uses fc on Windows instead of the missing diff command.
 	vim.g.undotree_DiffCommand = "FC"
 end
+
+-- Auto disable spell checking in terminal buffers
+vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter", "WinEnter" }, {
+	callback = function()
+		if vim.bo.buftype ~= "terminal" then
+			return
+		end
+
+		vim.opt_local.spell = false
+		vim.b.enable_spelunker_vim = 0
+	end,
+})

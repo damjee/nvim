@@ -30,7 +30,10 @@ vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/", { noremap = true })
 
 -- Add-on Specific Remaps
 --
---
+-- Toggleterm keymaps
+vim.keymap.set({ "n", "i", "t" }, "<C-o>", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
+
+
 -- Neoclip keymaps
 vim.keymap.set("n", "<leader>ph", "<Cmd>Telescope neoclip<CR>")
 
@@ -46,7 +49,7 @@ local nvimTreeFocusOrToggle = function()
 		nvimTree.tree.focus()
 	end
 end
-vim.keymap.set("n", "<C-n>", nvimTreeFocusOrToggle)
+vim.keymap.set({ "n", "i", "t" }, "<C-n>", nvimTreeFocusOrToggle)
 
 -- Telescope keymaps
 local builtin = require("telescope.builtin")
@@ -58,7 +61,7 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 -- Harpoon keymaps
 local harpoon = require("harpoon")
 harpoon:setup({})
-vim.keymap.set("n", "<leader>a", function()
+vim.keymap.set("n", "<C-a>", function()
 	harpoon:list():add()
 end)
 vim.keymap.set("n", "<leader>e>", function()
